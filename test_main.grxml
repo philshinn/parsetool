@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" root="topLevel">
+  <rule id="topLevel" scope="public">
+    <item>this is the main grammar saying</item>
+    <ruleref uri="lib/library.grxml#getGreeting"/>
+    <item>and</item>
+    <ruleref uri="lib/library.grxml"/> <!-- Implicitly calls root rule of library.grxml -->
+  </rule>
+</grammar>

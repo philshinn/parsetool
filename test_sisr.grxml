@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" root="command" version="1.0">
+
+  <rule id="city" scope="public">
+    <one-of>
+      <item>boston <tag>out = "BOS";</tag></item>
+      <item>new york <tag>out = "NYC";</tag></item>
+      <item>san francisco <tag>out = "SFO";</tag></item>
+    </one-of>
+    <!-- This tag ensures the rule 'city' itself has an 'out' value 
+         based on the outcome of its <one-of> child. -->
+    <tag>out = rules._latest;</tag> 
+  </rule>
+
+  <rule id="action" scope="public">
+    <one-of>
+      <item>show weather <tag>out = "weather";</tag></item>
+      <item>show map <tag>out = "map";</tag></item>
+    </one-of>
+    <!-- This tag ensures the rule 'action' itself has an 'out' value
+         based on the outcome of its <one-of> child. -->
+    <tag>out = rules._latest;</tag>
+  </rule>
+
+  <rule id="command" scope="public">
+    <ruleref uri="#action"/>
+    <!-- This tag initializes 'out' for the command rule and stores the action -->
+    <tag> out = {}; out.action = rules._latest; </tag>
+    
+    <item>for</item> <!-- This item matches the literal word "for" -->
+    
+    <ruleref uri="#city"/>
+    <!-- This tag adds the city to the 'out' object -->
+    <tag> out.city = rules._latest; </tag>
+  </rule>
+
+</grammar>

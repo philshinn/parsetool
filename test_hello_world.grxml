@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" version="1.0" root="greet">
+  <rule id="greet" scope="public">
+    <item>hello world</item>
+  </rule>
+</grammar>

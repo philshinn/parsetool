@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" root="a">
+  <rule id="a">
+    <item>prefix</item>
+    <ruleref uri="#a"/>
+    <item>suffix</item>
+  </rule>
+</grammar>

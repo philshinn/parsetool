@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" version="1.0" root="main">
+  <rule id="action" scope="private">
+    <one-of>
+      <item>play</item>
+      <item>pause</item>
+    </one-of>
+  </rule>
+  <rule id="object" scope="private">
+    <item>music</item>
+    <item repeat="0-1">now</item> <!-- Removed leading space, assuming space between tokens -->
+  </rule>
+  <rule id="main" scope="public">
+    <ruleref uri="#action"/>
+    <!-- Implicit space between tokens when matching "action object" -->
+    <ruleref uri="#object"/>
+  </rule>
+</grammar>
