@@ -59,3 +59,9 @@ Successfully validated GRXML structure: test_one_of.grxml
 Attempting to parse string: 'start please'
 True
 
+python pt5.py test_sisr.grxml -s 'show weather for Boston' --semantic-output 
+
+ <interpretation grammar="C:\Users\pshinns7\Documents\VTK\GRXML\gemini.1\parsetool\test_sisr.grxml"><instance>{
+  "action": "weather",
+  "city": "BOS"
+}</instance><input mode="voice">show weather for Boston</input></interpretation>
